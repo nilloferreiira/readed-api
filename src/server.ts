@@ -20,6 +20,7 @@ app.register(fastifyJwt, {
 app
   .listen({
     host: "0.0.0.0",
-    port: process.env.PORT ? Number(process.env.port) : 3333,
+    port: Number(process.env.PORT!),
+    // port: process.env.PORT ? Number(process.env.port) : 3333,
   })
   .then(() => console.log("server running!"));

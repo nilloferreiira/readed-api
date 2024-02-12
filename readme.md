@@ -19,7 +19,7 @@ __Inclua informações como:__
 __Autenticação__:
  - Login com o Google OAuth
 - token de autenticacao
-- middlawares de autenticação
+- middlewares de autenticação
 
 __Segurança:__
 - Validação de dados com zod: Garante a qualidade dos dados inseridos na aplicação.

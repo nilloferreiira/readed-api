@@ -17,20 +17,20 @@ __Inclua informações como:__
 - resenha da leitura.
 
 __Autenticação__:
- - Login com o Google OAuth
-- token de autenticacao
-- middlewares de autenticação
+- Login com o Google OAuth 
+- Token de autenticacao
+- Middlewares de autenticação
 
 __Segurança:__
 - Validação de dados com zod: Garante a qualidade dos dados inseridos na aplicação.
-- Middlaware de autenticação
+- Middleware de autenticação
 - Token de autenticação
 
 __Tecnologias utilizadas:__
-	 - NodeJS
-	 - Fastify / jwt / cors
-	 - Prisma ORM
-	 - Axios
-	- Zod
+- NodeJS
+- Fastify / jwt / cors
+- Prisma ORM
+- Axios
+- Zod
 	
 

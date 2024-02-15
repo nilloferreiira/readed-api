@@ -19,6 +19,15 @@ model User {
   books Book[]
 }
 
+model Account {
+  id       String @id @default(uuid())
+  name     String
+  email    String @unique
+  password String
+
+  books Book[]
+}
+
 model Book {
   id     String   @id @default(uuid())
   userId String
@@ -28,5 +37,7 @@ model Book {
   date   DateTime @default(now())
   rating Int
 
-  user User @relation(fields: [userId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+  Account   Account? @relation(fields: [accountId], references: [id])
+  accountId String?
 }

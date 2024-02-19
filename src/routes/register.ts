@@ -9,8 +9,15 @@ export async function registerRoutes(app: FastifyInstance) {
       email: z.string().email(),
       password: z.string(),
     });
-
+    
     const userInfo = userSchema.parse(request.body);
+
+    //comentar linha de cima e usar userInfo = request.body
+
+    if (!prisma || !prisma.account) {
+      console.error("Objeto 'prisma' ou 'prisma.account' não está definido.");
+      return;
+    }
 
     let user = await prisma.account.findUnique({
       where: {

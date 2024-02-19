@@ -16,7 +16,6 @@ export async function registerRoutes(app: FastifyInstance) {
 
     if (!prisma || !prisma.account) {
       console.error("Objeto 'prisma' ou 'prisma.account' não está definido.");
-      return;
     }
 
     let user = await prisma.account.findUnique({

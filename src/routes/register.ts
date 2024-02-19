@@ -3,7 +3,7 @@ import { z } from "zod";
 import { prisma } from "../lib/prisma";
 
 export async function registerRoutes(app: FastifyInstance) {
-  app.post("/signup", async (request) => {
+  app.post("/signup", async (request, reply) => {
     const userSchema = z.object({
       name: z.string(),
       email: z.string().email(),
@@ -12,10 +12,9 @@ export async function registerRoutes(app: FastifyInstance) {
     
     const userInfo = userSchema.parse(request.body);
 
-    //comentar linha de cima e usar userInfo = request.body
-
     if (!prisma || !prisma.account) {
       console.error("Objeto 'prisma' ou 'prisma.account' não está definido.");
+      return reply.status(500).send()
     }
 
     let user = await prisma.account.findUnique({

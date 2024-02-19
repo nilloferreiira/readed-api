@@ -12,13 +12,15 @@ export async function registerRoutes(app: FastifyInstance) {
 
     const userInfo = userSchema.parse(request.body);
 
-    let user = await prisma.account.findUnique({
-      where: {
-        email: userInfo.email,
-      },
-    });
+    // let user = await prisma.account.findUnique({
+    //   where: {
+    //     email: userInfo.email,
+    //   },
+    // });
 
-    if (!user) {
+    // if (!user) {
+
+    let user
       user = await prisma.account.create({
         data: {
           name: userInfo.name,
@@ -26,7 +28,7 @@ export async function registerRoutes(app: FastifyInstance) {
           password: userInfo.password,
         },
       });
-    }
+    // }
 
     const token = app.jwt.sign(
       {

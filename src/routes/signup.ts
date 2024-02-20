@@ -19,7 +19,7 @@ export async function signUp(app: FastifyInstance) {
         })
 
         if(!user) {
-            await prisma.account.create({
+            user = await prisma.account.create({
                 data: {
                     name,
                     email,

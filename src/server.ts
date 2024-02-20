@@ -4,14 +4,12 @@ import fastifyJwt from "@fastify/jwt";
 import { booksRoutes } from "./routes/books";
 import { authRoutes } from "./routes/auth";
 import { registerRoutes } from "./routes/register";
-import { signUp } from "./routes/signup";
 
 const app = fastify();
 
-app.register(signUp)
 app.register(authRoutes)
 app.register(booksRoutes)
-// app.register(registerRoutes)
+app.register(registerRoutes)
 
 app.register(fastifyCors, {
   origin: true

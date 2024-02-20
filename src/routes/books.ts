@@ -135,8 +135,4 @@ export async function booksRoutes(app: FastifyInstance) {
     return reply.status(204).send();
   });
 
-  app.get('/getsusers', async () => {
-    const users = await prisma.account.findMany()
-    return { users }
-  })
 }

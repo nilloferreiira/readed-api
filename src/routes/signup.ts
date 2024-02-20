@@ -32,7 +32,7 @@ export async function signUp(app: FastifyInstance) {
     })
 
     app.get('/sign', async () => {
-        const users = await prisma.account.findMany()
+        const users = await prisma.book.findMany()
 
         return { users }
     })
